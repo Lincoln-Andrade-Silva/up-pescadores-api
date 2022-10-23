@@ -7,6 +7,7 @@ import java.application.utils.core.responses.DataResponse;
 import java.application.utils.core.resquests.DataRequest;
 import java.application.utils.exeption.ApplicationBusinessException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
@@ -49,7 +50,7 @@ public class PersonResource {
     @GetMapping(
             value = "{id}"
     )
-    public DataResponse<PersonDTO> get(
+    public ResponseEntity<PersonDTO> get(
             @PathVariable(value = "id") Long id,
             HttpServletResponse servletResponse
     ) {
@@ -60,7 +61,7 @@ public class PersonResource {
             response = personService.getById(id);
             response.setMessage(DomainReturnCode.SUCCESSFUL_OPERATION.getDesc());
             servletResponse.setStatus(HttpServletResponse.SC_OK);
-            return response;
+            return ResponseEntity.ok().body(response.getData());
 
         } catch (ApplicationBusinessException error) {
             response.setResponse(error);
@@ -68,7 +69,7 @@ public class PersonResource {
             servletResponse.setStatus(HttpServletResponse.SC_NOT_FOUND);
         }
 
-        return response;
+        return null;
     }
 
     @PostMapping(
