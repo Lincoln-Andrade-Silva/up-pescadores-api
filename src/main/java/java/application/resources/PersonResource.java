@@ -15,8 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletResponse;
 
 @RestController
-@CrossOrigin(origins = "*")
-@RequestMapping(value = "/")
+@RequestMapping(value = "/person")
 public class PersonResource {
     private static final String LOW = "Low";
     private static final String MODERATE = "Moderate";
