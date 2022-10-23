@@ -69,7 +69,7 @@ public class PersonResource {
             servletResponse.setStatus(HttpServletResponse.SC_NOT_FOUND);
         }
 
-        return null;
+        return ResponseEntity.ok().body(response.getData());
     }
 
     @PostMapping(
