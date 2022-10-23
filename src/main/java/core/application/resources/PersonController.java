@@ -53,7 +53,7 @@ public class PersonController {
             @PathVariable(value = "id") Long id,
             HttpServletResponse servletResponse
     ) {
-
+        System.out.println("get");
         DataResponse<PersonDTO> response = new DataResponse<>();
 
         try {
