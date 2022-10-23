@@ -6,6 +6,8 @@ import java.application.utils.core.responses.DataListResponse;
 import java.application.utils.core.responses.DataResponse;
 import java.application.utils.core.resquests.DataRequest;
 import java.application.utils.exeption.ApplicationBusinessException;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -26,7 +28,7 @@ public class PersonResource {
     @GetMapping(
             value = ""
     )
-    public DataListResponse<PersonDTO> list(
+    public ResponseEntity<List<PersonDTO>> list(
             HttpServletResponse servletResponse
     ) {
 
@@ -36,7 +38,7 @@ public class PersonResource {
             response = personService.list();
             response.setMessage(DomainReturnCode.SUCCESSFUL_OPERATION.getDesc());
             servletResponse.setStatus(HttpServletResponse.SC_OK);
-            return response;
+            return ResponseEntity.ok().body(response.getData());
 
         } catch (ApplicationBusinessException error) {
             response.setResponse(error);
@@ -44,7 +46,7 @@ public class PersonResource {
             servletResponse.setStatus(HttpServletResponse.SC_NOT_FOUND);
         }
 
-        return response;
+        return ResponseEntity.ok().body(response.getData());
     }
 
     @GetMapping(
