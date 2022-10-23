@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @RestController
 @RequestMapping(value = "/person")
-public class PersonResource {
+public class PersonController {
     private static final String LOW = "Low";
     private static final String MODERATE = "Moderate";
     private static final String VERY_HIGH = "Very High";
