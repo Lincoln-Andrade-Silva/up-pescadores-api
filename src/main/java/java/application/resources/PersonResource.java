@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping(value = "/person")
+@RequestMapping(value = "/")
 public class PersonResource {
     private static final String LOW = "Low";
     private static final String MODERATE = "Moderate";
