@@ -1,1 +1,1 @@
-web: java -cp target/classes/:target/dependency/* com.wedevol.xmpp.EntryPoint
+web: java -Dserver.port=$PORT -jar target/demo-0.0.1-SNAPSHOT.jar
