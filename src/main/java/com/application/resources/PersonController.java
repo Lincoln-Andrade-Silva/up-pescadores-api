@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletResponse;
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping(value = "/person")
 public class PersonController {
     private static final String LOW = "Low";
