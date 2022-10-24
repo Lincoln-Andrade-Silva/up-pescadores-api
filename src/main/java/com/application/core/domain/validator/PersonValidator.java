@@ -29,10 +29,6 @@ public class PersonValidator {
             throw new ApplicationBusinessException(DomainReturnCode.PERSON_NAME_IS_EMPTY.name(),
                     DomainReturnCode.PERSON_NAME_IS_EMPTY.getTranslatedDescription(messageSource, locale));
         }
-        if (person.getFishes().isEmpty()) {
-            throw new ApplicationBusinessException(DomainReturnCode.PERSON_FISHES_IS_EMPTY.name(),
-                    DomainReturnCode.PERSON_FISHES_IS_EMPTY.getTranslatedDescription(messageSource, locale));
-        }
         if (person.getRegion().isEmpty()) {
             throw new ApplicationBusinessException(DomainReturnCode.PERSON_REGION_IS_EMPTY.name(),
                     DomainReturnCode.PERSON_REGION_IS_EMPTY.getTranslatedDescription(messageSource, locale));
