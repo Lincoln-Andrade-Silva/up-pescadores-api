@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT -jar target/
+web: java -Dserver.port=$PORT -jar target/up-pescadores-api-1.0-SNAPSHOT.jar
