@@ -89,7 +89,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>core.application.ApiServiceApplication</mainClass>
+                            <mainClass>com.application.ApiServiceApplication</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
