@@ -7,6 +7,7 @@ import lombok.Setter;
 
 @Data
 public class PersonDTO {
+    Long id;
     String name;
     String region;
     String fishes;

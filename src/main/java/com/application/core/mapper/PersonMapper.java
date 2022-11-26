@@ -18,6 +18,7 @@ public class PersonMapper {
 
     public static PersonDTO createDTOFromEntity(Person entity) {
         PersonDTO person = new PersonDTO();
+        person.setId(entity.getId());
         person.setName(entity.getName());
         person.setFishes(entity.getFishes());
         person.setRegion(entity.getRegion());
