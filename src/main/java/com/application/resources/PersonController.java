@@ -72,6 +72,30 @@ public class PersonController {
         return response;
     }
 
+    @DeleteMapping(
+            value = "{id}"
+    )
+    public DataResponse<PersonDTO> delete(
+            @PathVariable(value = "id") Long id,
+            HttpServletResponse servletResponse
+    ) {
+        System.out.println("delete");
+        DataResponse<PersonDTO> response = new DataResponse<>();
+
+        try {
+            response = personService.delete(id);
+            response.setMessage(DomainReturnCode.SUCCESSFUL_OPERATION.getDesc());
+            servletResponse.setStatus(HttpServletResponse.SC_OK);
+            return response;
+
+        } catch (ApplicationBusinessException error) {
+            response.setResponse(error);
+            response.setSeverity(LOW);
+            servletResponse.setStatus(HttpServletResponse.SC_NOT_FOUND);
+        }
+
+        return response;
+    }
     @PostMapping(
             value = "/create",
             consumes = "application/json",

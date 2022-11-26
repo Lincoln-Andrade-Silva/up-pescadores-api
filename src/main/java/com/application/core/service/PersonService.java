@@ -56,6 +56,20 @@ public class PersonService {
         return dataResponse;
     }
 
+    public DataResponse<PersonDTO> delete(Long id) throws ApplicationBusinessException {
+        DataResponse<PersonDTO> dataResponse = new DataResponse<>();
+
+        Optional<Person> optionalPerson = personRepository.findById(id);
+        Person person = PersonValidator.validateOptional(optionalPerson, messageSource, "pt-br");
+
+        PersonDTO dto = PersonMapper.createDTOFromEntity(person);
+        personRepository.delete(person);
+
+        dataResponse.setData(dto);
+        dataResponse.setMessage(DomainReturnCode.SUCCESSFUL_OPERATION.getDesc());
+        return dataResponse;
+    }
+
     public DataResponse<PersonDTO> create(DataRequest<PersonDTO> request) throws ApplicationBusinessException {
         DataResponse<PersonDTO> dataResponse = new DataResponse<>();
 
