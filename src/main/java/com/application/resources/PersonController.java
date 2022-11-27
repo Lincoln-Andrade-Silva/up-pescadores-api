@@ -124,4 +124,31 @@ public class PersonController {
             return response;
         }
     }
+
+    @PatchMapping(
+            value = "{id}"
+    )
+    public DataResponse<PersonDTO> edit(
+            @PathVariable(value = "id") Long id,
+            @RequestBody PersonDTO bodyRequest,
+            HttpServletResponse servletResponse
+    ) {
+        System.out.println("edit");
+        DataRequest<PersonDTO> request = new DataRequest<>(bodyRequest, "br");
+        DataResponse<PersonDTO> response = new DataResponse<>();
+
+        try {
+            response = personService.edit(id, request.getData());
+            response.setMessage(DomainReturnCode.SUCCESSFUL_OPERATION.getDesc());
+            servletResponse.setStatus(HttpServletResponse.SC_OK);
+            return response;
+
+        } catch (ApplicationBusinessException error) {
+            response.setResponse(error);
+            response.setSeverity(LOW);
+            servletResponse.setStatus(HttpServletResponse.SC_NOT_FOUND);
+        }
+
+        return response;
+    }
 }

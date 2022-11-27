@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="82eedf4b-5b85-4189-9420-f2d04729715b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/application/core/domain/dto/person/PersonDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/application/core/domain/dto/person/PersonDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/application/core/mapper/PersonMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/application/core/mapper/PersonMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/application/core/service/PersonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/application/core/service/PersonService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/application/resources/PersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/application/resources/PersonController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +75,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ApiServiceApplication (1)">
+  <component name="RunManager" selected="Spring Boot.ApiServiceApplication ">
     <configuration name="ApiServiceApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="ACTIVE_PROFILES" />
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
@@ -152,7 +152,8 @@
       <workItem from="1666645356684" duration="4146000" />
       <workItem from="1667764518012" duration="1085000" />
       <workItem from="1669474788305" duration="391000" />
-      <workItem from="1669476511507" duration="72000" />
+      <workItem from="1669476511507" duration="362000" />
+      <workItem from="1669555207190" duration="334000" />
     </task>
     <servers />
   </component>

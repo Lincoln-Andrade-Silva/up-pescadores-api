@@ -84,4 +84,18 @@ public class PersonService {
         dataResponse.setMessage(DomainReturnCode.SUCCESSFUL_OPERATION.getDesc());
         return dataResponse;
     }
+
+    public DataResponse<PersonDTO> edit(Long id, PersonDTO request) throws ApplicationBusinessException {
+        DataResponse<PersonDTO> dataResponse = new DataResponse<>();
+
+        Optional<Person> optionalPerson = personRepository.findById(id);
+        Person person = PersonValidator.validateOptional(optionalPerson, messageSource, "pt-br");
+
+        PersonMapper.editPerson(person, request);
+        personRepository.save(person);
+
+        dataResponse.setData(request);
+        dataResponse.setMessage(DomainReturnCode.SUCCESSFUL_OPERATION.getDesc());
+        return dataResponse;
+    }
 }

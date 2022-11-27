@@ -25,4 +25,11 @@ public class PersonMapper {
         person.setPhoneNumber(entity.getPhoneNumber());
         return person;
     }
+
+    public static void editPerson(Person person, PersonDTO request) {
+        person.setName(request.getName());
+        person.setFishes(request.getFishes());
+        person.setRegion(request.getRegion());
+        person.setPhoneNumber(request.getPhoneNumber());
+    }
 }
